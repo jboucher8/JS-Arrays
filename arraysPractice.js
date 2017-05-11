@@ -5,7 +5,10 @@ var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
 
   //Code Here
-
+  function first(arr) {
+    return arr[0];
+  }
+  first(arr);
 
 //Next problem
 
@@ -16,6 +19,10 @@ var arr = [40,50,60];
 
 
   //Code Here
+  function last(arr) {
+    return arr[arr.length-1];
+  }
+  last(arr);
 
 
 //Next Problem
@@ -25,6 +32,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
+  function looper(family) {
+    for (var i in family) {
+      alert(family[i]);
+      }
+    }
+  looper(family);
 
 
 //Next problem
@@ -35,15 +48,46 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   //Code Here
+  function reversedLooper(letters) {
+    for(var i = letters.length -1; i >-1; i--) {
+      alert(letters[i]);
+    }
 
+  }
+ reversedLooper(letters);
 
 //Next Problem
 
 
 var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
-
   //Code Here
+  var evenNums = [];
+  function evenFinder(nums) {
+  	for (var i = 0; i < nums.length; i++) {
+  		if(nums[i] % 2 === 0) {
+  			evenNums.push(nums[i]);
+  		}
+  	}
+  	console.log(evenNums);
+  }
+  evenFinder(nums);
+
+//   function evenFinder(nums) {
+//     for(var i = 0; i < nums.length; i++) {
+//       if(nums[i] % 2 !== 0) {
+//         nums[i] = 'toremove';
+//       }
+//     }
+
+//     while (nums.indexOf('toremove') != -1) {
+//       nums.splice(nums.indexOf('toremove'), 1);
+//     }
+
+//    console.log(nums);
+
+//   }
+// evenFinder(nums);
 
 
 //Next problem
@@ -56,7 +100,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
+  var oddsArray = [];
+  var evensArray = [];
 
+  function divider(numbersArray) {
+  	for(i = 0; i < numbersArray.length; i++) {
+  		if(!(numbersArray[i] % 2 === 0)) {
+  			oddsArray.push(numbersArray[i]);
+  		} else
+  		evensArray.push(numbersArray[i]);
+  	}
+  	console.log(oddsArray);
+  	console.log(evensArray);
+  }
+
+  divider(numbersArray);
 
 //Next Problem
 
@@ -70,9 +128,13 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
+function finder(getRandomArbitrary) {
+	for(var i = 0; i < numbers.length; i++) {
+		
+	}
+}
 
-  //Code Here
-
+//Code Here
 
 //Next problem
 
@@ -82,7 +144,10 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+  function reverse(str) {
+    return str.split('').reverse('').join('');
+  }
+  reverse(str);
 
 //Next Problem
 
