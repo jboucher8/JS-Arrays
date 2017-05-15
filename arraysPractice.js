@@ -62,14 +62,15 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
   //Code Here
-  var evenNums = [];
+  
   function evenFinder(nums) {
+  	var evenNums = [];
   	for (var i = 0; i < nums.length; i++) {
   		if(nums[i] % 2 === 0) {
   			evenNums.push(nums[i]);
   		}
   	}
-  	console.log(evenNums);
+  	return evenNums;
   }
   evenFinder(nums);
 
@@ -100,18 +101,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
-  var oddsArray = [];
-  var evensArray = [];
+  
 
   function divider(numbersArray) {
+  	var oddsArray = [];
+  	var evensArray = [];
+  	var twoArrays = [];
+
   	for(i = 0; i < numbersArray.length; i++) {
   		if(!(numbersArray[i] % 2 === 0)) {
   			oddsArray.push(numbersArray[i]);
   		} else
   		evensArray.push(numbersArray[i]);
   	}
-  	console.log(oddsArray);
-  	console.log(evensArray);
+  	twoArrays.push(evensArray, oddsArray);
+  	return twoArrays;
   }
 
   divider(numbersArray);
@@ -128,11 +132,18 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-function finder(getRandomArbitrary) {
-	for(var i = 0; i < numbers.length; i++) {
+function finder(arr) {
+	var randomNum = getRandomArbitrary();
+	var flag = false;
+	for(var i = 0; i < arr.length; i++) {
+		if(arr[i] === randomNum) {
+			flag = true;
+		} 
 		
 	}
+	return flag;
 }
+// finder(numbers);
 
 //Code Here
 
@@ -169,7 +180,33 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+// var itemToRemove = [];
+function removeItem(myGroceryList, itemToRemove) {
+	// for(var i = 0; i < myGroceryList.length; i++) {
+ //  		if(myGroceryList[i] !== itemToRemove) {
+ //  			myGroceryList.splice(i, 1);
+  			
+ //  			// console.log(myGroceryList);
+ //  			// console.log(itemToRemove);
+ //  		}
+ 	myGroceryList.splice(myGroceryList.indexOf(itemToRemove), 1);
+  		return myGroceryList;
+ 	
+  	
+}
+removeItem(myGroceryList, itemToRemove);
 
+
+
+  function addItem(myGroceryList, itemToAdd) {
+  		myGroceryList.push(itemToAdd);
+  		return myGroceryList;
+  	
+  }
+
+  // addItem(myGroceryList, "onion");
+
+  // console.log(myGroceryList);
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
@@ -182,6 +219,15 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
+function maker(start, end) {
+  var arr = [];
+  for(var i = start; i < end + 2; i++) {
+      arr.push(i); 
+  }
+  return arr;
+} 
+maker(1, 215);
+  
 
 
 
@@ -193,7 +239,17 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+function addTen(numbers) {
+	var total = 10;
+	for(var i =0; i < numbers.length; i++) {
 
+		total += numbers;
+    console.log(total);
+console.log(numbers);
+	}
+}
+console.log(total);
+console.log(numbers);
 
 
 //Next Problem
