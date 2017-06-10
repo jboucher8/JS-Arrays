@@ -91,6 +91,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 // evenFinder(nums);
 
 
+
 //Next problem
 
 
@@ -219,14 +220,25 @@ removeItem(myGroceryList, itemToRemove);
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
-function maker(start, end) {
+// function maker(start, end) {
+//   var arr = [];
+//   for(var i = start; i < end +1; i++) {
+//       arr.push(i); 
+//   }
+//   alert(arr);
+//   return arr;
+// } 
+// maker(1, 215);
+
+function maker() {
   var arr = [];
-  for(var i = start; i < end + 2; i++) {
+  for(var i = 1; i < 216; i++) {
       arr.push(i); 
   }
+  // alert(arr);
   return arr;
 } 
-maker(1, 215);
+maker();
   
 
 
@@ -241,15 +253,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   //Code Here
 function addTen(numbers) {
 	var total = 10;
+  // var newArray = [];
 	for(var i =0; i < numbers.length; i++) {
-
-		total += numbers;
-    console.log(total);
-console.log(numbers);
+    numbers[i] = parseInt(numbers[i]);
+		numbers[i] += total;
+    // newArray.push(numbers[i]);
 	}
+  return numbers;
 }
-console.log(total);
-console.log(numbers);
+addTen(numbers);
+
 
 
 //Next Problem
@@ -270,6 +283,13 @@ for(var i = 0; i < num2; i++){
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
+function longer(arr1, arr2) {
+  if (arr1.length < arr2.length) {
+    return arr2;
+  }
+  return arr1;
+}
+longer(arr1, arr2);
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -279,7 +299,18 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
-
+function both (arr1, arr2) {
+  var newArray = [];
+  for(var i = 0; i < arr1.length; i++){
+    for(var j = 0; j < arr2.length; j++) {
+      if(arr1[i] == arr2[j]){
+        newArray.push(arr1[i]);
+      }
+    }
+  }
+  return newArray;
+}
+both(arr1, arr2);
 
 
 
@@ -319,14 +350,27 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
+  devMountainEmployees.push(tyler, cahlan, ryan, colt);
+
+  console.log(devMountainEmployees.length);
+  // console.log(devMountainEmployees);
+
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
-
-
+// function leaveOfAbsence (arr) {
+  for (var i = 0; i < devMountainEmployees.length; i++) {
+    if(devMountainEmployees[i].name === 'Cahlan') {
+      devMountainEmployees.splice(i, 1);
+    } 
+  }
+  // return arr;
+// }  
+// leaveOfAbsence(devMountainEmployees);
+// console.log(devMountainEmployees.length);
+// console.log(devMountainEmployees);
 
 //NEXT PROBLEM
 
@@ -337,6 +381,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -348,8 +393,26 @@ var user1 = {
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
 };
+var user2 = {
+    name: 'Tyler McGinnis2',
+    email: '2tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript2',
+    username: 'infiniateLoop2'
+};
+var user3 = {
+    name: 'Tyler McGinnis3',
+    email: '3tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript3',
+    username: 'infiniateLoop3'
+};
+
+
+
+
 
 //Your Code Here
+users.push(user1, user2, user3);
+
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -360,5 +423,12 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+  for (var i = 0; i < users.length; i++) {
+  if(users[i].email === 'tylermcginnis33@gmail.com') {
+    users.splice(i, 1);
+
+  }
+}
+// console.log(users);
 
 //The activity we just did is very much how data works in 'the real world'.
